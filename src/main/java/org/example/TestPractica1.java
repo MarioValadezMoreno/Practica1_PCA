@@ -1,10 +1,7 @@
 package org.example;
 import java.lang.*;
 import practicas_pca.TesterPracticas;
-/**
- * Hello world!
- *
- */
+
 public class TestPractica1 {
     public static void main( String[] args )
     {
