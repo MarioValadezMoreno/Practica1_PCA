@@ -48,7 +48,7 @@ public class AlgoritmoBucketSort implements TesterRun {
             }
         }
 
-        //Borramos elementos y ponemos a null los buckets para no saturar al Heap
+        //Unimos todos los buckets, borramos elementos y ponemos a null los buckets para no saturar al Heap
         for (List<Integer> bucket : buckets) {
             listaOrdenada.addAll(bucket);
             bucket.clear();
