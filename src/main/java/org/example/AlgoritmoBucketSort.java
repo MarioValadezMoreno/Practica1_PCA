@@ -16,6 +16,7 @@ public class AlgoritmoBucketSort implements TesterRun {
         int max = Collections.max(numbers);
         int min = Collections.min(numbers);
         int tamañoBucket = numbers.size()/num_threads;
+        int rango = (max - min) / num_threads;
 
         //Creamos lista de buckets
         List<List<Integer>> buckets = new ArrayList<>(num_threads);
@@ -26,7 +27,7 @@ public class AlgoritmoBucketSort implements TesterRun {
         //Asignamos cada número de la lista a un bucket
         //Este bucle es el que lo hace mal, hay que asignar DIRECTAMENTE cada numero a un bucket, si no, es demasiado complejo y tarda demasiado
         for (int num : numbers) {
-            int index = Math.abs(num) % num_threads;
+            int index = Math.min(num_threads-1, Math.abs((num - min) / rango));
             buckets.get(index).add(num);
         }
 
