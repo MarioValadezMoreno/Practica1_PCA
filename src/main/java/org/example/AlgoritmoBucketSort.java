@@ -15,7 +15,6 @@ public class AlgoritmoBucketSort implements TesterRun {
         //Maximo, mínimo y el tamaño
         int max = Collections.max(numbers);
         int min = Collections.min(numbers);
-        int tamañoBucket = numbers.size()/num_threads;
         int rango = (max - min) / num_threads;
 
         //Creamos lista de buckets
