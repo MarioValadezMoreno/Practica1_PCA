@@ -7,7 +7,7 @@ import practicas_pca.TesterPracticas;
 public class Main
 {//prueba
     public static void main( String[] args ) {
-        TesterPracticas TP = new TesterPracticas(new AlgoritmoBucketSort());
-        TP.evaluarPractica(TesterPracticas.Instancias.NUMBER_12500000, 6);
+        TesterPracticas TP = new TesterPracticas(new AlgoritmoBucketSortExecutor());
+        TP.evaluarPractica(TesterPracticas.Instancias.NUMBER_25000000, 6);
     }
 }

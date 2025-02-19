@@ -15,12 +15,12 @@ public class AlgoritmoBucketSort implements TesterRun {
         //Maximo, mínimo y el tamaño
         int max = Collections.max(numbers);
         int min = Collections.min(numbers);
-        int tamañoBucket = numbers.size()/num_threads;
         int rango = (max - min) / num_threads;
 
         //Creamos lista de buckets
         List<List<Integer>> buckets = new ArrayList<>(num_threads);
         for (int i = 0; i < num_threads; i++) {
+
             buckets.add(new ArrayList<>());
         }
 
@@ -58,4 +58,13 @@ public class AlgoritmoBucketSort implements TesterRun {
 
         return listaOrdenada;
     }
+
+    //Crear executorService
+    //Bucle for
+    //Crear tareas, bucle for, crea Callable<ArrayList<Integer>> tarea
+    //creamos un future y con el executor hacemos submit para cada tarea
+    //Fin de for
+    //Recogemos resultados con future.get()
+    //Ordenar elementos con addAll (igual que en la practica 1)
+    //shutdown() del execute
 }
