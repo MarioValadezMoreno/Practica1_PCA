@@ -8,10 +8,10 @@ public class Main {
         //Semaforo2 hilos2 = new Semaforo2();
         //hilos2.ejecutarHilos(); // Llamamos al método para lanzar los hilos
 
-        Semaforo3 hilos3 = new Semaforo3();
-        hilos3.ejecutarHilos(); // Llamamos al método para lanzar los hilos
+        //Semaforo3 hilos3 = new Semaforo3();
+        //hilos3.ejecutarHilos(); // Llamamos al método para lanzar los hilos
 
-        //ProductorConsumidor pc = new ProductorConsumidor();
-        //pc.ejecutarHilos();
+        ProductorConsumidor pc = new ProductorConsumidor();
+        pc.ejecutarHilos();
     }
 }

@@ -19,11 +19,14 @@ public class ProductorConsumidor {
         Thread productor2 = new Thread(new Productor(), "Productor 2");
         //COMPLETAR EL CÓDIGO
         // Crear y ejecutar "Consumidor1" y "Consumidor2"
-
+        Thread consumidor1 = new Thread(new Consumidor(),"Consumidor 1");
+        Thread consumidor2 = new Thread(new Consumidor(),"Consumidor 2");
         productor1.start();
         productor2.start();
         //COMPLETAR EL CÓDIGO
         //Arrancar los consumidores
+        consumidor1.start();
+        consumidor2.start();
         
     }
 
@@ -50,5 +53,24 @@ public class ProductorConsumidor {
 
     // COMPLETAR CÖDIGO
     // Implementar la Clase Consumidor, de modo que imprima el valor consumido
+    static class Consumidor implements Runnable {
+        @Override
+        public void run(){
+            try {
+                while (true){
+                    int item;
+                    elementosDisponibles.acquire(); //Espera a que haya un elemento en el buffer
+                    mutex.acquire();
+                    item=buffer.poll(); //Saca el elemento del buffer
+                    System.out.println(Thread.currentThread().getName() + " obtuvo: "+item);
+                    mutex.release();
+                    espacioDisponible.release(); //Libera espacio del buffer
+                    Thread.sleep(1000);
+                }
+            }catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
 }
 
