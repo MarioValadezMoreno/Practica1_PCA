@@ -1,4 +1,4 @@
-package org.example;
+package Practica1y2;
 
 import practicas_pca.TesterRun;
 
