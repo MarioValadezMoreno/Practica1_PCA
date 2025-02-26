@@ -3,7 +3,7 @@ package Practica3y4;
 import java.util.concurrent.Semaphore;
 
 public class Semaforo1 {
-    private final Semaphore semaforo = new Semaphore(0);
+    private final Semaphore semaforo = new Semaphore(1);
 
     public void ejecutarHilos() {
         Thread hilo1 = new Thread(() -> {
@@ -33,6 +33,8 @@ public class Semaforo1 {
             Thread.currentThread().interrupt();
         }
         hilo1.start();
-    }
+    } //Con permits=0 se ejecuta primero el hilo 1, ya que el hilo2 hace acquire y no hay permiso para pasar el semáforo
+    //Al terminar el hilo1 hace release, sumando 1 a permits, por lo cual el hilo2 puede ejecutarse
+    //Con permits=1, hilo2 se ejecuta primero correctamente, y luego el hilo1.
 }
 
