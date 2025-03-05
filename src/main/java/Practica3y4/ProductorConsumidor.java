@@ -60,10 +60,10 @@ public class ProductorConsumidor {
                 while (true){
                     int item;
                     elementosDisponibles.acquire(); //Espera a que haya un elemento en el buffer
-                    mutex.acquire();
+                    mutex.acquire(); //Espera el semaforo
                     item=buffer.poll(); //Saca el elemento del buffer
                     System.out.println(Thread.currentThread().getName() + " obtuvo: "+item);
-                    mutex.release();
+                    mutex.release(); //Libera el semaforo
                     espacioDisponible.release(); //Libera espacio del buffer
                     Thread.sleep(1000);
                 }
