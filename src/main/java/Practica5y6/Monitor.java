@@ -7,7 +7,7 @@ public class Monitor {
 
     public synchronized void addInt(Integer dato){
         /* @TODO: COMPLETAR EL MÉTODO QUE AÑADE UN ELEMENTO */
-        coleccion.addLast(dato); //Añade el dato a la coleccion
+        coleccion.add(dato); //Añade el dato a la coleccion
         imprimirLista(); //imprime la lista
         notify(); //Despierta al primer elemento de la cola de espera
 
@@ -19,8 +19,8 @@ public class Monitor {
             if (coleccion.isEmpty()) {
                 return 0; //Devuelve 0 si vacio
             } else {
-                if (coleccion.getLast() % 2 == 0) { //Mira si es par
-                    int x = coleccion.removeLast();
+                if (coleccion.get(coleccion.size()-1) % 2 == 0) { //Mira si es par
+                    int x = coleccion.remove(coleccion.size()-1);
                     imprimirLista();
                     return x;
                 } else {
@@ -36,8 +36,8 @@ public class Monitor {
             if (coleccion.isEmpty()) {
                 return 0; //Devuelve 0 si vacio
             } else {
-                if (coleccion.getLast() % 2 == 1) { //Mira si es impar
-                    int x = coleccion.removeLast();
+                if (coleccion.get(coleccion.size()-1) % 2 == 1) { //Mira si es impar
+                    int x = coleccion.remove(coleccion.size()-1);
                     imprimirLista();
                     return x;
                 } else {
