@@ -15,12 +15,36 @@ public class Monitor {
     }
     public synchronized Integer getPar()throws InterruptedException{
         /* @TODO: COMPLETAR EL MÉTODO QUE TOMA UN ELEMENTO PAR*/
-
+        while (true) {
+            if (coleccion.isEmpty()) {
+                return 0; //Devuelve 0 si vacio
+            } else {
+                if (coleccion.getLast() % 2 == 0) { //Mira si es par
+                    int x = coleccion.removeLast();
+                    imprimirLista();
+                    return x;
+                } else {
+                    wait();
+                }
+            }
+        }
         /* QUE NO SE TE OLVIDE LLAMAR A imprimir_lista() UNA VEZ COGIDO  */
     }
     public synchronized Integer getImpar()throws InterruptedException{
         /* @TODO: COMPLETAR EL MÉTODO QUE TOMA UN ELEMENTO IMPAR*/
-
+        while (true) {
+            if (coleccion.isEmpty()) {
+                return 0; //Devuelve 0 si vacio
+            } else {
+                if (coleccion.getLast() % 2 == 1) { //Mira si es impar
+                    int x = coleccion.removeLast();
+                    imprimirLista();
+                    return x;
+                } else {
+                    wait();
+                }
+            }
+        }
         /* QUE NO SE TE OLVIDE LLAMAR A imprimir_lista() UNA VEZ COGIDO  */
     }
     public void imprimirLista(){
