@@ -22,6 +22,7 @@ public class Monitor {
                 if (coleccion.get(coleccion.size()-1) % 2 == 0) { //Mira si es par
                     int x = coleccion.remove(coleccion.size()-1);
                     imprimirLista();
+                    notify();
                     return x;
                 } else {
                     wait();
@@ -39,6 +40,7 @@ public class Monitor {
                 if (coleccion.get(coleccion.size()-1) % 2 == 1) { //Mira si es impar
                     int x = coleccion.remove(coleccion.size()-1);
                     imprimirLista();
+                    notify();
                     return x;
                 } else {
                     wait();
