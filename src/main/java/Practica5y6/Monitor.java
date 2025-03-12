@@ -7,6 +7,9 @@ public class Monitor {
 
     public synchronized void addInt(Integer dato){
         /* @TODO: COMPLETAR EL MÉTODO QUE AÑADE UN ELEMENTO */
+        coleccion.addLast(dato); //Añade el dato a la coleccion
+        imprimirLista(); //imprime la lista
+        notify(); //Despierta al primer elemento de la cola de espera
 
         /* QUE NO SE TE OLVIDE LLAMAR A imprimir_lista() UNA VEZ AÑADIDO */
     }
