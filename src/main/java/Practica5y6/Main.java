@@ -6,8 +6,8 @@ import java.util.Collections;
 public class Main {
     public static void main(String[] args) {
         int elem = 60;
-        Monitor monitor = new Monitor(); //Para P5
-        //MonitorP6 monitor = new MonitorP6(); //Para P6
+        //Monitor monitor = new Monitor(); //Para P5
+        MonitorP6 monitor = new MonitorP6(); //Para P6
 
         Thread hiloproductor1 = new Thread(() -> {
             for (int a = 1; a <= elem/2; a++) {
